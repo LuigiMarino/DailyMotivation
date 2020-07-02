@@ -1,7 +1,10 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, date, time, timedelta
-import sys
+import random
+
+#Random Number
+random_number = random.randint(0,3)
 
 #Motivational Quotes
 quotes = [
@@ -19,7 +22,7 @@ sent_from = gmail_user
 to = ['emails@luigi-marino.com']
 
 #Email Title
-msg = str(today) + "\n" + quotes[0]
+msg = str(today) + "\n" + quotes[random_number]
 
 try:
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
